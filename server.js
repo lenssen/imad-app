@@ -31,7 +31,7 @@ var articleone={
             </p> `,
     
 };
-function createemplate (data) {
+function createtemplate (data) {
     title = data.title;
     heading = data.heading;
     date = data.date;
