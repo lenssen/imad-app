@@ -36,7 +36,7 @@ function createemplate (data) {
     heading = data.heading;
     date = data.date;
     contents = data.content;
-    var htltemplate= `
+    var htmltemplate= `
     <html>
     
 
