@@ -64,8 +64,9 @@ function createemplate (data) {
         </div>
     </body>
     </html>
-`;
     
+`;
+    return htmltemplate;
 }
 app.get('/articleone', function(req,res){
     res.send(createtemplate(articleone));
