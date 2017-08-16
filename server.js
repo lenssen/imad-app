@@ -21,7 +21,7 @@ var articleone={
     title :'article-one',
     heading : 'article-one',
     date: '7-5-07',
-    contents: `<p>
+    content: `<p>
                 this is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article one
             </p>
             <p>
