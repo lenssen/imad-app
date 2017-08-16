@@ -16,19 +16,39 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-
-var articleone={
-    title :'article-one',
-    heading : 'article-one',
-    date: '7-5-07',
-    content: `<p>
-                this is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article one
-            </p>
-            <p>
-                this is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article one
-            </p><p>
-                this is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article one
-            </p> `,
+var articles ={
+'articleone':{
+        title :'article-one',
+        heading : 'article-one',
+        date: '7-5-07',
+        content: `<p>
+                    this is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article one
+                </p>
+                <p>
+                    this is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article one
+                </p><p>
+                    this is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article one
+                </p> `
+        
+    },
+'  articletwo':{
+        title :'article-two',
+        heading : 'article-two',
+        date: '6-5-07',
+        content: `<p>
+                    this is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article onethis is the content of article one
+                </p>`
+               
+        
+    },
+'articlethree':{
+        title :'article-three',
+        heading : 'article-three',
+        date: '8-5-07',
+        content: `<p>
+                    this is the content of article one.
+                </p>`
+    }
     
 };
 function createtemplate (data) {
@@ -68,15 +88,9 @@ function createtemplate (data) {
 `;
     return htmltemplate;
 }
-app.get('/articleone', function(req,res){
-    res.send(createtemplate(articleone));
-});
-app.get('/ui/article-two.html', function (req, res) {
-res.sendFile(path.join(__dirname,'ui', 'article-two.html'));
-});
-
-app.get('/ui/article-three.html', function (req, res) {
-res.sendFile(path.join(__dirname, 'ui','article-three.html'));
+app.get('/:articlename', function(req,res){
+   var articlename= req.params.articlename;
+    res.send(createtemplate(articles[articlename]));
 });
 
 
