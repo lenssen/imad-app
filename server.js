@@ -32,10 +32,10 @@ var articleone={
     
 };
 function createtemplate (data) {
-    title = data.title;
-    heading = data.heading;
-    date = data.date;
-    contents = data.content;
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var contents = data.content;
     var htmltemplate= `
     <html>
     
