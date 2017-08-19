@@ -14,7 +14,7 @@ button.onclick= function(){
         }
     }
     };
-    request.open('GET','http://manasaelenssen.imad.hasrua-app.io/counter',true);
+    request.open('GET','http://manasaelenssen.imad.hasura-app.io/counter',true);
             request.send(null);
     
 
