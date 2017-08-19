@@ -14,7 +14,7 @@ button.onclick= function(){
         }
     }
     };
-    request.open('GET','http:manasaelenssen.imad.hasrua-app.io',true);
+    request.open('GET','http://manasaelenssen.imad.hasrua-app.io',true);
             request.send(null);
     
 
