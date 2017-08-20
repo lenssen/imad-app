@@ -101,7 +101,7 @@ app.get('/:articlename', function(req,res){
 app.get('/ui/main.js', function (req,res){
   res.sendFile(path.join(__dirname,'ui','main.js'));  
 });
-var names=0;
+var names=[];
 app.get('/submitname/:name',function(req,res){
     var name=req.params.name;
     names.push(name);
