@@ -31,8 +31,7 @@ button.onclick= function(){
         {
         if(request.status===200)
         {
-             var nameInput= document.getElementById('name');
-             var name= nameInput.value;
+            
             var names=request.responseText;
             names=JSON.parse(names);
            var list='';
@@ -46,6 +45,8 @@ button.onclick= function(){
         }
     
     };
+     var nameInput= document.getElementById('name');
+ var name= nameInput.value;
     request.open('GET','http://manasaelenssen.imad.hasura-app.io/submitname?name='+name,true);
             request.send(null);
     
