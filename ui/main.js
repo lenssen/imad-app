@@ -22,8 +22,7 @@ button.onclick= function(){
 };
  
  
- var nameInput= document.getElementById('name');
- var name= nameInput.value;
+
  var submit=document.getElementById('submitbtn');
  submit.onclick=function(){
       var request = new XMLHttpRequest();
@@ -32,6 +31,8 @@ button.onclick= function(){
         {
         if(request.status===200)
         {
+             var nameInput= document.getElementById('name');
+             var name= nameInput.value;
             var names=request.responseText;
             names=JSON.parse(names);
            var list='';
