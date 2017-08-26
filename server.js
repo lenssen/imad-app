@@ -1,6 +1,14 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var pool = require('pg').pool;
+var config = {
+    user:'manansaelenssen',
+    database: 'manasaelenssen',
+    host:'5432',
+    passsword: process.env.DB.password,
+    
+}
 
 var app = express();
 app.use(morgan('combined'));
@@ -95,6 +103,21 @@ function createtemplate (data) {
 `;
     return htmltemplate;
 }
+var pool=new pool(config);
+app.get('/test-db',function(req,res){
+    pool.query('select * from test',function(err,result){
+        if(err){
+            res.status(500).send(err,tostring());
+        }
+        else{
+            res.send(JSON.stringify(result));
+        }
+        
+    });
+    
+    
+});
+
 var counter = 0;
 app.get('/counter', function(req,res)
 {
